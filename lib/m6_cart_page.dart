@@ -16,8 +16,8 @@ class _MyCartPageState extends State<MyCartPage>{
     return Scaffold(backgroundColor: Colors.white,
         appBar: AppBar(backgroundColor: Colors.white,
           leading: IconButton(onPressed: (){
-            Get.off(MyHomePage(title: 'MyHomePage'));
-          },icon: Icon(Icons.close),color: Colors.pink[400],),
+            Get.off(const MyHomePage(title: 'MyHomePage'));
+          },icon: const Icon(Icons.close),color: Colors.pink[400],),
 
           actions: const [
             Row(
@@ -258,7 +258,7 @@ class _MyCartPageState extends State<MyCartPage>{
                         padding: const EdgeInsets.symmetric(horizontal: 25,vertical: 10),
                         child: SizedBox(height: 40,width: 300,
                           child: TextButton(onPressed: (){
-                            Get.to(MyCheckoutPage(title: 'MyCheckoutPage'));
+                            Get.to(const MyCheckoutPage(title: 'MyCheckoutPage'));
                           },
                               style: TextButton.styleFrom(
                                 foregroundColor: Colors.white,

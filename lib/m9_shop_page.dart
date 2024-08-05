@@ -18,7 +18,7 @@ class _MyShopPage extends State<MyShopPage>{
         elevation: 0,
         backgroundColor: Colors.white,
         leading: IconButton(onPressed: (){
-          Get.off(MyHomePage(title: 'MyHomePage'));},
+          Get.off(const MyHomePage(title: 'MyHomePage'));},
             icon: Icon(Icons.arrow_back,color: Colors.pink[400],)),
         actions: [
           const SizedBox(width: 60,),

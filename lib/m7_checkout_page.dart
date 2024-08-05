@@ -17,8 +17,8 @@ class _MyCheckoutPage extends State<MyCheckoutPage>{
       appBar: AppBar(
         backgroundColor: Colors.white,
         leading:  IconButton(onPressed: (){
-          Get.off(MyCartPage(title: 'MyCartPage'));
-        },icon: Icon(Icons.close),color: Colors.pink[400],),
+          Get.off(const MyCartPage(title: 'MyCartPage'));
+        },icon: const Icon(Icons.close),color: Colors.pink[400],),
         actions: const[
           Row(
             children: [
