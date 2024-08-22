@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food_panda/m3_home_page.dart';
+import 'package:food_panda/m6_cart_page.dart';
 import 'package:get/get.dart';
 class MyFavouritePage extends StatefulWidget{
   const MyFavouritePage({super.key,required this.title});
@@ -28,7 +29,9 @@ class _MyFavouritePageState extends State<MyFavouritePage> {
           },icon:const Icon(Icons.arrow_back),color: Colors.pink.withOpacity(0.9),),
           title: const Text('Favourites',style: TextStyle(fontWeight: FontWeight.bold,),),
           actions: [
-            IconButton(onPressed: (){}, icon: Icon(Icons.shopping_bag_outlined,color: Colors.pink.withOpacity(0.9),))
+            IconButton(onPressed: (){
+              Get.to(const MyCartPage(title: ''));
+            }, icon: Icon(Icons.shopping_bag_outlined,color: Colors.pink.withOpacity(0.9),))
           ],
         ),
         body: Column(

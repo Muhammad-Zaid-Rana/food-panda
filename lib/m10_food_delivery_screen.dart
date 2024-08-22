@@ -28,7 +28,8 @@ class _MyFoodDeliveryPage extends State<MyFoodDeliveryPage>{
                 child: Column(crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(height: 11),
-                    Text('Khan International Textiles',overflow: TextOverflow.ellipsis,maxLines: 1,style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold,color: Colors.white),),
+                    SizedBox(width: 150,
+                        child: Text('Khan International Textiles',overflow: TextOverflow.ellipsis,maxLines: 1,style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold,color: Colors.white),)),
                     Text('Multan',style: TextStyle(color: Colors.white),),
                   ],
                 ),
@@ -119,31 +120,29 @@ class _MyFoodDeliveryPage extends State<MyFoodDeliveryPage>{
                              ),
                            )
                       ] ),
-                     ClipRRect(borderRadius: BorderRadius.circular(15),
-                       child: Container(decoration: BoxDecoration(border: Border.all(width: 1,color: Colors.grey)),
-                         child: Padding(
-                           padding: const EdgeInsets.symmetric(horizontal: 10),
-                           child: Column(crossAxisAlignment: CrossAxisAlignment.start,
-                             children: [
-                               const Row(
-                                 children: [
-                                   Text('Master Biryani'),
-                                   Icon(Icons.star_outline_rounded,color: Colors.orange,),
-                                   Text('4.8',style: TextStyle(fontWeight: FontWeight.bold),),
-                                   Text('(10000+)',style: TextStyle(color: Colors.grey),)
-                                 ],
-                               ),
-                               const Text('\$\$ - PKR 199 minimum -Biryani',style: TextStyle(color: Colors.grey),),
-                               Row(
-                                 children: [
-                                   const Icon(CupertinoIcons.clock),
-                                   const Text('15-20 min'),
-                                   Icon(Icons.delivery_dining,color: Colors.pink[400],),
-                                   Text('Gift:Free Delivery',style: TextStyle(color: Colors.pink[400]),)
-                                 ],
-                               )
-                             ],
-                           ),
+                     Container(decoration: BoxDecoration(border: Border.all(width: 1,color: Colors.grey),borderRadius: BorderRadius.circular(4)),
+                       child: Padding(
+                         padding: const EdgeInsets.symmetric(horizontal: 10),
+                         child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                           children: [
+                             const Row(
+                               children: [
+                                 Text('Master Biryani'),
+                                 Icon(Icons.star_outline_rounded,color: Colors.orange,),
+                                 Text('4.8',style: TextStyle(fontWeight: FontWeight.bold),),
+                                 Text('(10000+)',style: TextStyle(color: Colors.grey),)
+                               ],
+                             ),
+                             const Text('\$\$ - PKR 199 minimum -Biryani',style: TextStyle(color: Colors.grey),),
+                             Row(
+                               children: [
+                                 const Icon(CupertinoIcons.clock),
+                                 const Text('15-20 min'),
+                                 Icon(Icons.delivery_dining,color: Colors.pink[400],),
+                                 Text('Gift:Free Delivery',style: TextStyle(color: Colors.pink[400]),)
+                               ],
+                             )
+                           ],
                          ),
                        ),
                      )
@@ -273,31 +272,29 @@ class _MyFoodDeliveryPage extends State<MyFoodDeliveryPage>{
                                   ),
                                 )
                               ] ),
-                          ClipRRect(borderRadius: BorderRadius.circular(15),
-                            child: Container(decoration: BoxDecoration(border: Border.all(width: 1,color: Colors.grey)),
-                              child: Padding(
-                                padding: const EdgeInsets.symmetric(horizontal: 10),
-                                child: Column(crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    const Row(
-                                      children: [
-                                        Text('Master Biryani'),
-                                        Icon(Icons.star_outline_rounded,color: Colors.orange,),
-                                        Text('4.8',style: TextStyle(fontWeight: FontWeight.bold),),
-                                        Text('(10000+)',style: TextStyle(color: Colors.grey),)
-                                      ],
-                                    ),
-                                    const Text('\$\$ - PKR 199 minimum -Biryani',style: TextStyle(color: Colors.grey),),
-                                    Row(
-                                      children: [
-                                        const Icon(CupertinoIcons.clock),
-                                        const Text('15-20 min'),
-                                        Icon(Icons.delivery_dining,color: Colors.pink[400],),
-                                        Text('Gift:Free Delivery',style: TextStyle(color: Colors.pink[400]),)
-                                      ],
-                                    )
-                                  ],
-                                ),
+                          Container(decoration: BoxDecoration(border: Border.all(width: 1,color: Colors.grey),borderRadius: BorderRadius.circular(4)),
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 10),
+                              child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const Row(
+                                    children: [
+                                      Text('Master Biryani'),
+                                      Icon(Icons.star_outline_rounded,color: Colors.orange,),
+                                      Text('4.8',style: TextStyle(fontWeight: FontWeight.bold),),
+                                      Text('(10000+)',style: TextStyle(color: Colors.grey),)
+                                    ],
+                                  ),
+                                  const Text('\$\$ - PKR 199 minimum -Biryani',style: TextStyle(color: Colors.grey),),
+                                  Row(
+                                    children: [
+                                      const Icon(CupertinoIcons.clock),
+                                      const Text('15-20 min'),
+                                      Icon(Icons.delivery_dining,color: Colors.pink[400],),
+                                      Text('Gift:Free Delivery',style: TextStyle(color: Colors.pink[400]),)
+                                    ],
+                                  )
+                                ],
                               ),
                             ),
                           )

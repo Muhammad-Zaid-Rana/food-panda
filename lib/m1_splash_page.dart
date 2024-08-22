@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'm3_home_page.dart';
 import 'm2_continue_page.dart';
 
-
 class MySplashPage extends StatefulWidget {
   const MySplashPage({super.key, required this.title});
 
@@ -39,5 +38,3 @@ class _MySplashPageState extends State<MySplashPage> {
     );
   }
 }
-
-

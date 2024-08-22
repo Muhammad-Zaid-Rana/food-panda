@@ -2,6 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:food_panda/m10_food_delivery_screen.dart';
+import 'package:food_panda/m11_profile_page.dart';
+import 'package:food_panda/m12_pandapro_page.dart';
+import 'package:food_panda/m14_offers_page.dart';
+import 'package:food_panda/m15_voucher_page.dart';
+import 'package:food_panda/m16_order_page.dart';
+import 'package:food_panda/m17_address_page.dart';
+import 'package:food_panda/m17_setting_page.dart';
+import 'package:food_panda/m18_Terms_page.dart';
 import 'package:food_panda/m4_search_page.dart';
 import 'package:food_panda/m5_favourites_page.dart';
 import 'package:food_panda/m6_cart_page.dart';
@@ -30,8 +38,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 padding: EdgeInsets.symmetric(horizontal: 36),
                 child: Column(crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(height: 11),
-                    Text('Khan International Textiles',overflow: TextOverflow.ellipsis,maxLines: 1,style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold,color: Colors.white),),
+                   SizedBox(height: 11),
+                    SizedBox(width: 150,
+                        child: Text('Khan International Textiles',overflow: TextOverflow.ellipsis,maxLines: 1,style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold,color: Colors.white),)),
                     Text('Multan',style: TextStyle(color: Colors.white),),
                   ],
                 ),
@@ -78,46 +87,68 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Text('Top up,check your balance and get exciting offers!'),
                 ),
                 const Divider(),
-                const ListTile(
-                  leading: FaIcon(FontAwesomeIcons.crown,color: Colors.deepPurple,),
-                  title: Text('Become a pandapro'),
+                InkWell(onTap: (){Get.to(const MyPandaPro(title: ''));},
+                  child: const ListTile(
+                    leading: FaIcon(FontAwesomeIcons.crown,color: Colors.deepPurple,),
+                    title: Text('Become a pandapro'),
+                  ),
                 ),
-                ListTile(
-                  leading: Icon(Icons.discount_outlined,color: Colors.pink.withOpacity(0.9)),
-                  title: const Text('Offers'),
+                InkWell(onTap: (){Get.to(const MyOffersPage(title: ''));},
+                  child: ListTile(
+                    leading: Icon(Icons.discount_outlined,color: Colors.pink.withOpacity(0.9)),
+                    title: const Text('Offers'),
+                  ),
                 ),
-                ListTile(
-                  leading: Icon(Icons.card_travel_rounded,color: Colors.pink.withOpacity(0.9)),
-                  title: const Text('Vouchers'),
+                InkWell(onTap: (){
+                  Get.to(const MyVoucherPage(title: '',));
+                },
+                  child: ListTile(
+                    leading: Icon(Icons.local_activity_outlined,color: Colors.pink.withOpacity(0.9)),
+                    title: const Text('Vouchers'),
+                  ),
                 ),
-                ListTile(
-                  leading: Icon(Icons.favorite_border,color: Colors.pink.withOpacity(0.9)),
-                  title: const Text('Favourites'),
+                InkWell(onTap: (){Get.to(const MyFavouritePage(title: 'MyFavouritePage'));},
+                  child: ListTile(
+                    leading: Icon(Icons.favorite_border,color: Colors.pink.withOpacity(0.9)),
+                    title: const Text('Favourites'),
+                  ),
                 ),
-                ListTile(
-                  leading: Icon(Icons.payment,color: Colors.pink.withOpacity(0.9)),
-                  title: const Text('Orders & reordering'),
+                InkWell(onTap: (){
+                  Get.to(const MyOrderPage(title: ''));
+                },
+                  child: ListTile(
+                    leading: Icon(Icons.payment,color: Colors.pink.withOpacity(0.9)),
+                    title: const Text('Orders & reordering'),
+                  ),
                 ),
-                ListTile(
-                  leading: Icon(CupertinoIcons.person,color: Colors.pink.withOpacity(0.9)),
-                  title: const Text('View profile'),
+                InkWell(onTap: (){Get.to(const MyProfilePage(title: 'MyProfilePage'));},
+                  child: ListTile(
+                    leading: Icon(CupertinoIcons.person,color: Colors.pink.withOpacity(0.9)),
+                    title: const Text('View profile'),
+                  ),
                 ),
-                ListTile(
-                  leading: Icon(Icons.location_on_outlined,color: Colors.pink.withOpacity(0.9)),
-                  title: const Text('Adresses'),
+                InkWell(onTap: (){
+                  Get.to(const MyAddressPage(title: ''));
+                },
+                  child: ListTile(
+                    leading: Icon(Icons.location_on_outlined,color: Colors.pink.withOpacity(0.9)),
+                    title: const Text('Adresses'),
+                  ),
                 ),
-                ListTile(
-                  leading: FaIcon(FontAwesomeIcons.trophy,color: Colors.pink.withOpacity(0.9)),
-                  title: const Text('Panda rewards'),
-                ),
+              //  ListTile(
+                //  leading: FaIcon(FontAwesomeIcons.trophy,color: Colors.pink.withOpacity(0.9)),
+                  //title: const Text('Panda rewards'),
+                //),
                 const Divider(),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 15,vertical: 15),
-                  child: Text('Settings'),
+                 Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 15),
+                  child: InkWell(onTap: (){Get.to(const MySettingPage(title: 'title'));},
+                      child: const Text('Settings')),
                 ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 15,vertical: 15),
-                  child: Text('Terms & conditions / Privacy'),
+                 Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 15),
+                  child: InkWell(onTap: (){ Get.to(const MyTermsPage(title: ''));},
+                      child: const Text('Terms & conditions / Privacy')),
                 ),
                 const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 15,vertical: 15),
@@ -460,17 +491,20 @@ class _MyHomePageState extends State<MyHomePage> {
                     borderRadius: const BorderRadius.all(Radius.circular(5)),
                     border: Border.all(width: 1,color: Colors.grey)
                 ),
-                child: Column(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text('Become a pro',style: TextStyle(fontWeight:FontWeight.bold,fontSize: 20),),
-                    Row(
-                      children: [
-                        const Text('Get unlimited free deliveries '),
-                        const Spacer(),
-                        Image.asset('assets/images/pandapro.jpg',height: 30,width: 70,),
-                      ],
-                    ),
-                  ],
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text('Become a pro',style: TextStyle(fontWeight:FontWeight.bold,fontSize: 20),),
+                      Row(
+                        children: [
+                          const Text('Get unlimited free deliveries '),
+                          const Spacer(),
+                          Image.asset('assets/images/pandapro.jpg',height: 30,width: 70,),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -652,17 +686,20 @@ class _MyHomePageState extends State<MyHomePage> {
                     borderRadius: const BorderRadius.all(Radius.circular(5)),
                     border: Border.all(width: 1,color: Colors.grey)
                 ),
-                child: Column(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text('Try panda rewards!',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
-                    Row(
-                      children: [
-                        const Text('Earn points and win prizes'),
-                        const Spacer(),
-                        Image.asset('assets/images/panda_rewards.jpg',height: 30,width: 100,)
-                      ],
-                    ),
-                  ],
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text('Try panda rewards!',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+                      Row(
+                        children: [
+                          const Text('Earn points and win prizes'),
+                          const Spacer(),
+                          Image.asset('assets/images/panda_rewards.jpg',height: 30,width: 100,)
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
             )
